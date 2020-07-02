@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Тип оборудования",
+  "name": "DataLineMyProject1ТипОборудованияE",
+  "className": "ТипОборудованияE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "equipment-type",
+      "modelProjection": "ТипОборудованияE"
+    }
+  ]
+}

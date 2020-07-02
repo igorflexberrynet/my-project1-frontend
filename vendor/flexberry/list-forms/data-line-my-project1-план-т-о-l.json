@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "data-line-my-project1-план-т-о-e",
+  "editForm": "data-line-my-project1-план-т-о-e",
+  "external": false,
+  "caption": "План ТО",
+  "name": "DataLineMyProject1ПланТОL",
+  "className": "ПланТОL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "maintenance-plan",
+      "modelProjection": "ПланТОL"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+import DataLineMyProject1МодельОборудованияEController from '../data-line-my-project1-модель-оборудования-e';
+
+var DataLineMyProject1МодельОборудованияENewController = DataLineMyProject1МодельОборудованияEController;
+export default DataLineMyProject1МодельОборудованияENewController;

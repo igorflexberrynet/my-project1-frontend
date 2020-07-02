@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "data-line-my-project1-факт-т-о-e",
+  "editForm": "data-line-my-project1-факт-т-о-e",
+  "external": false,
+  "caption": "Факт ТО",
+  "name": "DataLineMyProject1ФактТОL",
+  "className": "ФактТОL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "fact-of-the-maintenance",
+      "modelProjection": "ФактТОL"
+    }
+  ]
+}

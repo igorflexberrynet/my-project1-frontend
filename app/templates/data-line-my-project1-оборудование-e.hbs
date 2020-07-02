@@ -1,0 +1,335 @@
+<h3 class="ui header">{{t "forms.data-line-my-project1-оборудование-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.name
+      class=(if (v-get validationObject "name" "isInvalid") "error")
+      label=(t "forms.data-line-my-project1-оборудование-e.name-caption")
+      data-test-data-line-my-project1-оборудование-e-----=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "name" "messages")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.productionDate-caption"}}</label>
+    {{
+      flexberry-simpledatetime
+      type="date"
+      placeholder=(t 'components.flexberry-datepicker.placeholder')
+      readonly=readonly
+      value=model.productionDate
+      class=(if (v-get validationObject "productionDate" "isInvalid") "error")
+      data-test-data-line-my-project1-оборудование-e---------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "productionDate" "messages")}}
+  </div>
+
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.dateOfCommissioning-caption"}}</label>
+    {{
+      flexberry-simpledatetime
+      type="date"
+      placeholder=(t 'components.flexberry-datepicker.placeholder')
+      readonly=readonly
+      value=model.dateOfCommissioning
+      class=(if (v-get validationObject "dateOfCommissioning" "isInvalid") "error")
+      data-test-data-line-my-project1-оборудование-e--------------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "dateOfCommissioning" "messages")}}
+  </div>
+
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.warrantyPeriod-caption"}}</label>
+    {{
+      flexberry-simpledatetime
+      type="date"
+      placeholder=(t 'components.flexberry-datepicker.placeholder')
+      readonly=readonly
+      value=model.warrantyPeriod
+      class=(if (v-get validationObject "warrantyPeriod" "isInvalid") "error")
+      data-test-data-line-my-project1-оборудование-e---------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "warrantyPeriod" "messages")}}
+  </div>
+
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.operatingTime
+      class=(if (v-get validationObject "operatingTime" "isInvalid") "error")
+      label=(t "forms.data-line-my-project1-оборудование-e.operatingTime-caption")
+      data-test-data-line-my-project1-оборудование-e--------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "operatingTime" "messages")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.runDate-caption"}}</label>
+    {{
+      flexberry-simpledatetime
+      type="date"
+      placeholder=(t 'components.flexberry-datepicker.placeholder')
+      readonly=readonly
+      value=model.runDate
+      class=(if (v-get validationObject "runDate" "isInvalid") "error")
+      data-test-data-line-my-project1-оборудование-e--------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "runDate" "messages")}}
+  </div>
+
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.description
+      class=(if (v-get validationObject "description" "isInvalid") "error")
+      label=(t "forms.data-line-my-project1-оборудование-e.description-caption")
+      data-test-data-line-my-project1-оборудование-e------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "description" "messages")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.type-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.type
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="type"
+      projection="ТипОборудованияL"
+      title=(t "forms.data-line-my-project1-оборудование-e.type-caption")
+      readonly=readonly
+      componentName="typeLookup"
+      data-test-data-line-my-project1-оборудование-e-----=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "type" "messages")}}
+  </div>
+
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.status-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.status
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="status"
+      projection="СтатусОборудованияL"
+      title=(t "forms.data-line-my-project1-оборудование-e.status-caption")
+      readonly=readonly
+      componentName="statusLookup"
+      data-test-data-line-my-project1-оборудование-e-------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "status" "messages")}}
+  </div>
+
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.accountable-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.accountable
+      displayAttributeName="surname"
+      autocomplete=true
+      relationName="accountable"
+      projection="СотрудникL"
+      title=(t "forms.data-line-my-project1-оборудование-e.accountable-caption")
+      readonly=readonly
+      componentName="accountableLookup"
+      data-test-data-line-my-project1-оборудование-e------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "accountable" "messages")}}
+  </div>
+
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.accountable.surname
+      class=(if (v-get validationObject "accountable.surname" "isInvalid") "error")
+      label=(t "forms.data-line-my-project1-оборудование-e.accountable.surname-caption")
+      data-test-data-line-my-project1-оборудование-e--------------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "accountable.surname" "messages")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.accountable.name
+      class=(if (v-get validationObject "accountable.name" "isInvalid") "error")
+      label=(t "forms.data-line-my-project1-оборудование-e.accountable.name-caption")
+      data-test-data-line-my-project1-оборудование-e-----------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "accountable.name" "messages")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.accountable.patronymic
+      class=(if (v-get validationObject "accountable.patronymic" "isInvalid") "error")
+      label=(t "forms.data-line-my-project1-оборудование-e.accountable.patronymic-caption")
+      data-test-data-line-my-project1-оборудование-e-----------------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "accountable.patronymic" "messages")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.serviceContract-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.serviceContract
+      displayAttributeName="number"
+      autocomplete=true
+      relationName="serviceContract"
+      projection="ДоговорL"
+      title=(t "forms.data-line-my-project1-оборудование-e.serviceContract-caption")
+      readonly=readonly
+      componentName="serviceContractLookup"
+      data-test-data-line-my-project1-оборудование-e----------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "serviceContract" "messages")}}
+  </div>
+
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.serviceContract.date-caption"}}</label>
+    {{
+      flexberry-simpledatetime
+      type="date"
+      placeholder=(t 'components.flexberry-datepicker.placeholder')
+      readonly=true
+      value=model.serviceContract.date
+      class=(if (v-get validationObject "serviceContract.date" "isInvalid") "error")
+      data-test-data-line-my-project1-оборудование-e---------------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "serviceContract.date" "messages")}}
+  </div>
+
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.serviceContract.validityPeriod-caption"}}</label>
+    {{
+      flexberry-simpledatetime
+      type="date"
+      placeholder=(t 'components.flexberry-datepicker.placeholder')
+      readonly=true
+      value=model.serviceContract.validityPeriod
+      class=(if (v-get validationObject "serviceContract.validityPeriod" "isInvalid") "error")
+      data-test-data-line-my-project1-оборудование-e-------------------------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "serviceContract.validityPeriod" "messages")}}
+  </div>
+
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.model-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.model
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="model"
+      projection="МодельОборудованияL"
+      title=(t "forms.data-line-my-project1-оборудование-e.model-caption")
+      readonly=readonly
+      componentName="modelLookup"
+      data-test-data-line-my-project1-оборудование-e------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "model" "messages")}}
+  </div>
+
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.model.manufacturer.name
+      class=(if (v-get validationObject "model.manufacturer.name" "isInvalid") "error")
+      label=(t "forms.data-line-my-project1-оборудование-e.model.manufacturer.name-caption")
+      data-test-data-line-my-project1-оборудование-e------------------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "model.manufacturer.name" "messages")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.supplyContract-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.supplyContract
+      displayAttributeName="number"
+      autocomplete=true
+      relationName="supplyContract"
+      projection="ДоговорL"
+      title=(t "forms.data-line-my-project1-оборудование-e.supplyContract-caption")
+      readonly=readonly
+      componentName="supplyContractLookup"
+      data-test-data-line-my-project1-оборудование-e---------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "supplyContract" "messages")}}
+  </div>
+
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.supplyContract.date-caption"}}</label>
+    {{
+      flexberry-simpledatetime
+      type="date"
+      placeholder=(t 'components.flexberry-datepicker.placeholder')
+      readonly=true
+      value=model.supplyContract.date
+      class=(if (v-get validationObject "supplyContract.date" "isInvalid") "error")
+      data-test-data-line-my-project1-оборудование-e--------------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "supplyContract.date" "messages")}}
+  </div>
+
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.supplyContract.validityPeriod-caption"}}</label>
+    {{
+      flexberry-simpledatetime
+      type="date"
+      placeholder=(t 'components.flexberry-datepicker.placeholder')
+      readonly=true
+      value=model.supplyContract.validityPeriod
+      class=(if (v-get validationObject "supplyContract.validityPeriod" "isInvalid") "error")
+      data-test-data-line-my-project1-оборудование-e------------------------------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "supplyContract.validityPeriod" "messages")}}
+  </div>
+
+  <div class="field">
+    <label>{{t "forms.data-line-my-project1-оборудование-e.location-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.location
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="location"
+      projection="РасположениеL"
+      title=(t "forms.data-line-my-project1-оборудование-e.location-caption")
+      readonly=readonly
+      componentName="locationLookup"
+      data-test-data-line-my-project1-оборудование-e---------=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "location" "messages")}}
+  </div>
+
+</form>

@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "data-line-my-project1-статус-оборудования-e",
+  "editForm": "data-line-my-project1-статус-оборудования-e",
+  "external": false,
+  "caption": "Статус оборудования",
+  "name": "DataLineMyProject1СтатусОборудованияL",
+  "className": "СтатусОборудованияL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "equipment-status",
+      "modelProjection": "СтатусОборудованияL"
+    }
+  ]
+}

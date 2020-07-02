@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "data-line-my-project1-сотрудник-e",
+  "editForm": "data-line-my-project1-сотрудник-e",
+  "external": false,
+  "caption": "Сотрудник",
+  "name": "DataLineMyProject1СотрудникL",
+  "className": "СотрудникL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "employee",
+      "modelProjection": "СотрудникL"
+    }
+  ]
+}
