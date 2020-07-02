@@ -1,4 +1,0 @@
-import DataLineMyProject1СтатусОборудованияEController from '../data-line-my-project1-статус-оборудования-e';
-
-var DataLineMyProject1СтатусОборудованияENewController = DataLineMyProject1СтатусОборудованияEController;
-export default DataLineMyProject1СтатусОборудованияENewController;
